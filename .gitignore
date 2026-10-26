@@ -1,0 +1,11 @@
+# Material crudo pesado (no va al repo)
+/*.mp4
+/*.mov
+
+# Librería fuente (se usa el bundle en site/vendor)
+/anime/
+
+# Config local
+/.claude/
+.DS_Store
+Thumbs.db
