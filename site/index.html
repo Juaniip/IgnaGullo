@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Igna Gullo — Propuesta Audiovisual</title>
+  <meta name="description" content="Propuesta de producción audiovisual para el DJ Igna Gullo: rodaje multicámara 4K 60 fps y repertorio en vivo.">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HUD de visor de cámara -->
+  <div class="hud" aria-hidden="true">
+    <span class="hud-corner tl"></span><span class="hud-corner tr"></span>
+    <span class="hud-corner bl"></span><span class="hud-corner br"></span>
+    <div class="hud-rec"><i></i>REC</div>
+    <div class="hud-spec">4K UHD · 60P</div>
+    <div class="hud-tc" id="timecode">00:00:00:00</div>
+    <div class="hud-scene" id="scene">ESCENA 00 — INICIO</div>
+    <div class="hud-bar"><span id="progress"></span></div>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- HERO -->
+  <header class="hero" data-scene="ESCENA 00 — INICIO">
+    <div class="hero-inner">
+      <p class="eyebrow hero-eyebrow">Propuesta de producción audiovisual</p>
+      <img class="hero-logo" src="assets/logo.png" alt="Igna Gullo">
+      <h1 class="hero-title"><span class="split">Grabamos el set.</span> <span class="split dim">Desde todos los ángulos.</span></h1>
+      <div class="hero-meta">
+        <span>Multicámara</span><span>4K · 60 FPS</span><span>Iluminación de cabina</span><span>Repertorio en vivo</span>
+      </div>
+    </div>
+    <div class="scroll-cue"><span>Scroll</span><i></i></div>
+  </header>
+
+  <!-- CONCEPTO -->
+  <section class="concept" data-scene="ESCENA 01 — CONCEPTO">
+    <p class="eyebrow">01 — La idea</p>
+    <p class="concept-text" id="conceptText">Un registro profesional del set de Igna Gullo: varias cámaras, luz pensada para la cabina y una imagen nítida en 4K a 60 cuadros por segundo, para que cada transición se vea tan limpia como suena.</p>
+  </section>
+
+  <!-- TRÍPODES -->
+  <section class="scene" id="tripodScene" data-scene="ESCENA 02 — TRÍPODES">
+    <div class="sticky">
+      <div class="scene-copy">
+        <p class="eyebrow">02 — Soporte</p>
+        <h2 class="scene-title">Dos trípodes<br><span class="dim">de 1,40 m</span></h2>
+        <p class="scene-body">Dos puntos de cámara fijos a la altura justa de la cabina: estables, a nivel y sin invadir la pista.</p>
+        <ul class="spec-list">
+          <li><b>×2</b> trípodes</li>
+          <li><b>1,40 m</b> de altura</li>
+          <li><b>2</b> ángulos fijos</li>
+        </ul>
+      </div>
+      <div class="scene-art">
+        <svg class="art" viewBox="0 0 520 620" aria-label="Trípode desplegándose">
+          <line class="ground" x1="20" y1="560" x2="500" y2="560"/>
+          <g id="tripodSecond" opacity="0"><use href="#tripod" transform="translate(150 0)" class="ghost"/></g>
+          <g id="tripod">
+            <g class="leg leg-back"><line x1="200" y1="300" x2="200" y2="440" class="leg-up"/><g class="leg-low"><line x1="200" y1="420" x2="200" y2="580" /><circle cx="200" cy="580" r="5"/></g></g>
+            <g class="leg leg-l"><line x1="200" y1="300" x2="200" y2="440" class="leg-up"/><g class="leg-low"><line x1="200" y1="420" x2="200" y2="580" /><circle cx="200" cy="580" r="5"/></g></g>
+            <g class="leg leg-r"><line x1="200" y1="300" x2="200" y2="440" class="leg-up"/><g class="leg-low"><line x1="200" y1="420" x2="200" y2="580" /><circle cx="200" cy="580" r="5"/></g></g>
+            <g class="column">
+              <rect x="195" y="170" width="10" height="140" class="fill"/>
+              <rect x="176" y="150" width="48" height="20" rx="3" class="fill"/>
+              <rect x="160" y="140" width="80" height="10" rx="2" class="fill"/>
+              <line x1="224" y1="160" x2="290" y2="190" class="handle"/>
+            </g>
+            <rect x="182" y="292" width="36" height="16" rx="4" class="fill"/>
+          </g>
+          <g class="dim-line">
+            <line x1="40" y1="560" x2="40" y2="140" class="measure"/>
+            <line x1="28" y1="560" x2="52" y2="560" class="measure tick"/>
+            <line x1="28" y1="140" x2="52" y2="140" class="measure tick"/>
+            <line x1="52" y1="140" x2="160" y2="140" class="measure dashed"/>
+            <text x="54" y="356" class="measure-label">1,40 m</text>
+          </g>
+          <text x="390" y="110" class="big-x" id="tripodX2" opacity="0">×2</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÁMARA -->
+  <section class="scene" id="cameraScene" data-scene="ESCENA 03 — CÁMARA 4K">
+    <div class="sticky">
+      <div class="scene-copy">
+        <p class="eyebrow">03 — Captura</p>
+        <h2 class="scene-title">Grabación<br><span class="dim">en 4K a 60 FPS</span></h2>
+        <p class="cam-badge"><span>Sony</span> α7S III · Full Frame</p>
+        <p class="scene-body">Trabajamos con cámaras profesionales Sony, como la <b>Alpha 7S III</b>: full frame y excelente en baja luz, ideal para cabinas oscuras. Grabamos en 4K a 60 cuadros por segundo para lograr cámara lenta suave en los drops.</p>
+        <div class="counters">
+          <div><span class="counter" id="cRes">0</span><small>× 2160 px</small></div>
+          <div><span class="counter" id="cFps">0</span><small>fps</small></div>
+        </div>
+      </div>
+      <div class="scene-art">
+        <svg class="art" viewBox="0 0 820 520" aria-label="Cámara 4K en vista explotada">
+          <!-- sensor -->
+          <g class="cam-sensor">
+            <rect x="250" y="190" width="70" height="120" rx="4" class="fill-soft"/>
+            <rect x="262" y="206" width="46" height="88" class="grid-rect"/>
+            <text x="285" y="256" class="tiny center">4K</text>
+          </g>
+          <!-- body -->
+          <g class="cam-body">
+            <rect x="300" y="160" width="230" height="180" rx="14" class="fill"/>
+            <rect x="320" y="140" width="80" height="22" rx="4" class="fill"/>
+            <circle cx="350" cy="190" r="9" class="hole"/>
+            <rect x="460" y="180" width="50" height="10" rx="3" class="hole"/>
+            <text x="320" y="325" class="tiny inv">SONY α7S III</text>
+            <circle cx="505" cy="318" r="6" class="rec-dot"/>
+          </g>
+          <!-- monitor -->
+          <g class="cam-monitor">
+            <rect x="300" y="88" width="120" height="70" rx="5" class="fill"/>
+            <rect x="308" y="96" width="104" height="54" rx="2" class="hole"/>
+            <path d="M318 140 L338 118 L352 130 L372 106 L402 140 Z" class="fill-soft"/>
+          </g>
+          <!-- lens -->
+          <g class="lens l1"><rect x="530" y="200" width="40" height="100" rx="3" class="fill"/></g>
+          <g class="lens l2"><rect x="570" y="190" width="46" height="120" rx="3" class="ring"/><line x1="580" y1="190" x2="580" y2="310" class="ring-line"/><line x1="592" y1="190" x2="592" y2="310" class="ring-line"/><line x1="604" y1="190" x2="604" y2="310" class="ring-line"/></g>
+          <g class="lens l3"><rect x="616" y="180" width="40" height="140" rx="3" class="fill"/></g>
+          <g class="lens l4"><ellipse cx="664" cy="250" rx="12" ry="68" class="glass"/></g>
+          <g class="lens l5"><ellipse cx="690" cy="250" rx="9" ry="56" class="glass"/></g>
+          <!-- labels -->
+          <g class="cam-labels">
+            <g class="lab lab-sensor"><line x1="215" y1="310" x2="215" y2="420" class="leader"/><text x="215" y="442" class="label center">Sensor 4K UHD</text></g>
+            <g class="lab lab-fps"><line x1="430" y1="340" x2="430" y2="470" class="leader"/><text x="430" y="492" class="label center">60 fps</text></g>
+            <g class="lab lab-lens"><line x1="620" y1="320" x2="620" y2="420" class="leader"/><text x="620" y="442" class="label center">Óptica</text></g>
+            <g class="lab lab-mon"><line x1="300" y1="110" x2="200" y2="70" class="leader"/><text x="190" y="66" class="label end">Monitor</text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- LUZ -->
+  <section class="scene" id="lightScene" data-scene="ESCENA 04 — LUZ DE CABINA">
+    <div class="sticky">
+      <div class="scene-copy">
+        <p class="eyebrow">04 — Iluminación</p>
+        <h2 class="scene-title">Un foco<br><span class="dim">para la cabina</span></h2>
+        <p class="scene-body">Luz dedicada sobre el DJ: rostro, manos y equipos legibles en cámara, sin depender de las luces del lugar.</p>
+      </div>
+      <div class="scene-art">
+        <svg class="art" viewBox="0 0 640 560" aria-label="Foco iluminando la cabina del DJ">
+          <defs>
+            <linearGradient id="beamGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fff" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+            </linearGradient>
+            <radialGradient id="poolGrad">
+              <stop offset="0" stop-color="#fff" stop-opacity=".35"/>
+              <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <line x1="20" y1="520" x2="620" y2="520" class="ground"/>
+          <g class="lamp">
+            <line x1="90" y1="520" x2="90" y2="110" class="stand"/>
+            <line x1="90" y1="520" x2="50" y2="520" class="stand"/>
+            <line x1="90" y1="520" x2="130" y2="520" class="stand"/>
+            <g class="lamp-head">
+              <path d="M58 98 L120 82 L120 138 L58 122 Z" class="fill" transform="rotate(50 90 110)"/><circle cx="90" cy="110" r="7" class="stroke-fill"/>
+            </g>
+          </g>
+          <g class="booth">
+            <rect x="230" y="400" width="340" height="120" class="fill-dark stroke"/>
+            <text x="400" y="472" class="label center">CABINA</text>
+            <g class="deck d1"><rect x="250" y="366" width="96" height="34" rx="4" class="stroke-fill"/><ellipse cx="298" cy="383" rx="34" ry="9" class="platter"/></g>
+            <g class="deck mixer"><rect x="356" y="366" width="88" height="34" rx="4" class="stroke-fill"/><circle cx="376" cy="383" r="4" class="knob"/><circle cx="392" cy="383" r="4" class="knob"/><circle cx="408" cy="383" r="4" class="knob"/><circle cx="424" cy="383" r="4" class="knob"/></g>
+            <g class="deck d2"><rect x="454" y="366" width="96" height="34" rx="4" class="stroke-fill"/><ellipse cx="502" cy="383" rx="34" ry="9" class="platter"/></g>
+          </g>
+          <path class="beam" d="M109 133 L240 520 L700 520 Z" fill="url(#beamGrad)"/>
+          <ellipse class="pool" cx="400" cy="384" rx="200" ry="34" fill="url(#poolGrad)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÁNGULOS -->
+  <section class="scene" id="angleScene" data-scene="ESCENA 05 — MULTICÁMARA">
+    <div class="sticky">
+      <div class="scene-copy">
+        <p class="eyebrow">05 — Planta de cámaras</p>
+        <h2 class="scene-title">Diferentes<br><span class="dim">ángulos</span></h2>
+        <p class="scene-body">Un equipo que cubre el set desde varios puntos: plano general frontal, lateral sobre los decks y cámara móvil para detalles y público.</p>
+        <ul class="cam-legend">
+          <li><b>A</b> Frontal — trípode 1</li>
+          <li><b>B</b> Lateral — trípode 2</li>
+          <li><b>C</b> Móvil — detalles y público</li>
+        </ul>
+      </div>
+      <div class="scene-art">
+        <svg class="art" viewBox="0 0 600 600" aria-label="Vista superior con posiciones de cámara">
+          <g class="radar">
+            <circle cx="300" cy="230" r="80"/><circle cx="300" cy="230" r="160"/><circle cx="300" cy="230" r="240"/>
+          </g>
+          <g class="fov fov-a"><path d="M300 520 L194 195 L406 195 Z"/></g>
+          <g class="fov fov-b"><path d="M70 330 L293 139 L362 297 Z"/></g>
+          <g class="fov fov-c"><path d="M500 420 L219 267 L333 147 Z"/></g>
+          <rect x="200" y="190" width="200" height="80" class="fill-dark stroke booth-top"/>
+          <text x="300" y="236" class="label center">CABINA</text>
+          <g class="lightpos"><circle cx="300" cy="110" r="10" class="stroke-fill"/><text x="300" y="86" class="tiny center">LUZ</text></g>
+          <g class="cam cam-a"><circle cx="300" cy="520" r="20" class="fill"/><text x="300" y="526" class="cam-letter">A</text></g>
+          <g class="cam cam-b"><circle cx="70" cy="330" r="20" class="fill"/><text x="70" y="336" class="cam-letter">B</text></g>
+          <g class="cam cam-c"><circle cx="500" cy="420" r="20" class="fill"/><text x="500" y="426" class="cam-letter">C</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- VINILO -->
+  <section class="scene" id="recordScene" data-scene="ESCENA 06 — REPERTORIO">
+    <div class="sticky">
+      <div class="scene-copy">
+        <p class="eyebrow">06 — Por parte del DJ</p>
+        <h2 class="scene-title">Un repertorio<br><span class="dim">bastante amplio</span></h2>
+        <p class="scene-body">Siete bloques de mashups en vivo —los primeros cuatro mezclados en clave Camelot para transiciones limpias— más el cue show de apertura.</p>
+        <div class="counters">
+          <div><span class="counter" id="cTracks">0</span><small>temas</small></div>
+          <div><span class="counter" id="cBlocks">0</span><small>bloques</small></div>
+          <div><span class="counter" id="cCue">0</span><small>cues de apertura</small></div>
+        </div>
+      </div>
+      <div class="scene-art record-art">
+        <div class="record-stage">
+          <div class="vinyl">
+            <div class="grooves"></div>
+            <div class="vinyl-label"><img src="assets/logo.png" alt=""></div>
+          </div>
+          <div class="sleeve">
+            <img src="assets/logo.png" alt="Igna Gullo">
+            <span class="sleeve-tag">LIVE MASHUPS · VOL. 01–07</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKLIST -->
+  <section class="tracklist" id="repertorio" data-scene="ESCENA 07 — TEMAS">
+    <div class="tl-head">
+      <p class="eyebrow">07 — Temas a ofrecer</p>
+      <h2 class="tl-title">Tracklist</h2>
+      <p class="tl-sub">Elegí un bloque. Las claves <b>Camelot</b> marcan la tonalidad de cada tema.</p>
+    </div>
+    <div class="tl-scope">
+    <nav class="tabs" id="tabs" role="tablist"></nav>
+    <div class="tl-body">
+      <aside class="wheel-box">
+        <svg viewBox="-160 -160 320 320" id="camelot" aria-label="Rueda Camelot"></svg>
+        <p class="wheel-cap" id="wheelCap">Claves usadas en el bloque</p>
+      </aside>
+      <div class="tl-list-wrap">
+        <div class="tl-meta"><span id="blockName"></span><span id="blockNote"></span><span id="blockCount"></span></div>
+        <ol class="tl-list" id="trackList"></ol>
+      </div>
+    </div>
+    </div>
+
+    <div class="reel" id="reel">
+      <div class="reel-head">
+        <p class="eyebrow">Muestra — Video set</p>
+        <h3 class="reel-title">Así fue<br><span>nuestro último set</span></h3>
+        <p class="reel-sub">Unos segundos del último set de Igna Gullo que grabamos.</p>
+      </div>
+      <figure class="reel-frame">
+        <video id="reelVideo" preload="metadata" playsinline poster="media/set-poster.jpg">
+          <source src="media/set-1080p.mp4" type="video/mp4">
+        </video>
+        <button class="reel-play" id="reelPlay" aria-label="Reproducir video">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <span>Reproducir</span>
+        </button>
+        <div class="reel-hud" aria-hidden="true">
+          <span class="rec"><i></i>REC</span><span>3840 × 2160</span><span>SONY α7S III</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <footer class="contact" data-scene="ESCENA 08 — CONTACTO">
+    <p class="eyebrow">08 — Contacto</p>
+    <h2 class="contact-title"><span class="split">¿Grabamos</span> <span class="split">el próximo set?</span></h2>
+    <div class="contact-grid">
+      <a class="contact-card" href="https://www.instagram.com/ignagullo" target="_blank" rel="noopener">
+        <small>DJ</small>
+        <strong>@ignagullo</strong>
+        <span>Instagram ↗</span>
+      </a>
+      <a class="contact-card" href="mailto:juaniwilt@gmail.com">
+        <small>Productor audiovisual</small>
+        <strong>juaniwilt@gmail.com</strong>
+        <span>Escribir un correo ↗</span>
+      </a>
+    </div>
+    <img class="footer-logo" src="assets/logo.png" alt="Igna Gullo">
+    <p class="fine">Propuesta de producción audiovisual · Igna Gullo · 2026</p>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
